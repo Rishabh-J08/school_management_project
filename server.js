@@ -3,6 +3,7 @@ const { initializeDatabase } = require('./config/database.js');
 const schoolRoutes = require('./route/schoolRoutes.js');
 
 const app = express();
+app.use(cors());
 const PORT = process.env.PORT || 3000;
 
 
