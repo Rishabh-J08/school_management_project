@@ -5,8 +5,22 @@ const schoolRoutes = require('./route/schoolRoutes.js');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+
+
 // Middleware
 app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.json({
+    message: "Welcome to School Management API",
+    endpoints: {
+      addSchool: "/api/addSchool (POST)",
+      listSchools: "/api/listSchools (GET)"
+    },
+    version: "1.0.0",
+    status: "Active"
+  });
+});
 
 // Initialize routes
 app.use('/api', schoolRoutes);

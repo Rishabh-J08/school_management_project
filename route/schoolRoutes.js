@@ -41,12 +41,12 @@ router.get('/listSchool', validateLocationDetails, async(req,res,next)=>{
         //calculate distance per school
         const schoolWithDistance = schools.map(school => ({
             ...school,
-            distance: calculateDistance(userLat, userLong, school.latitude, school.longitude)
+            distance_in_Km: calculateDistance(userLat, userLong, school.latitude, school.longitude)
         }));
-        const sortedSchools = schoolWithDistance.sort((a,b)=> a.distance - b.distance);
+        const sortedSchools = schoolWithDistance.sort((a,b)=> a.distance_in_Km - b.distance_in_Km );
         res.status(200).json({
             total: sortedSchools.length,
-            schools: sortedSchools
+            schools: sortedSchools 
           });
     } catch(error){
         console.error('error  listing schools: ', error);
