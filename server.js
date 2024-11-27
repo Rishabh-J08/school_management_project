@@ -1,6 +1,7 @@
 const express = require('express');
 const { initializeDatabase } = require('./config/database.js');
 const schoolRoutes = require('./route/schoolRoutes.js');
+const cors = require('cors')
 
 const app = express();
 app.use(cors());
