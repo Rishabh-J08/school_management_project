@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
     message: "Welcome to School Management API",
     endpoints: {
       addSchool: "/api/addSchool (POST)",
-      listSchools: "/api/listSchool??latitude=40.7128&longitude=-74.0060 (GET) {can change the longitude and latitude in query param}"
+      listSchools: "/api/listSchool?latitude=40.7128&longitude=-74.0060 (GET) {can change the longitude and latitude in query param}"
     },
     version: "1.0.0",
     status: "Active"
